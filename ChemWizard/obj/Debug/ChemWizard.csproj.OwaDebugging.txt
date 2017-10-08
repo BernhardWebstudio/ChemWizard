@@ -1,0 +1,7 @@
+False
+730fb1d0-d6c8-40aa-8a55-7b95456d6a29f466e0ed-0fb0-4c81-bf68-49f37d6b37e6
+{322ebd71-d7b0-478c-98d8-c37aaf0e5ba9}{79a97b06-b3ea-484a-bdef-99e5ab541217}
+{c461fbba-0be0-4e76-b3e6-1eb86732f31c}
+1.0.0.0
+ChemWizard
+_layouts/15/
