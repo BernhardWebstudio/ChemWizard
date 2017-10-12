@@ -67,6 +67,15 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\Buttons\BtnHP16.png" />
+    <Content Include="Images\Buttons\BtnHP32.png" />
+    <Content Include="Images\Buttons\BtnHP80.png" />
+    <Content Include="Images\Buttons\BtnInfo16.png" />
+    <Content Include="Images\Buttons\BtnInfo32.png" />
+    <Content Include="Images\Buttons\BtnInfo80.png" />
+    <Content Include="Images\Buttons\BtnPubC16.png" />
+    <Content Include="Images\Buttons\BtnPubC32.png" />
+    <Content Include="Images\Buttons\BtnPubC80.png" />
     <Content Include="packages.config" />
     <Content Include="Scripts\Data\hazard-statements.json" />
     <Content Include="Scripts\Data\precautionary-statements.json" />
@@ -125,7 +134,7 @@
     <Content Include="Content\sass\Fabric.Color.Mixins.Output.scss" />
     <Content Include="Content\sass\Fabric.Animations.RTL.Output.scss" />
     <Content Include="Content\sass\Fabric.Animations.Output.scss" />
-    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <None Include="Scripts\jQuery\jquery-1.9.1.intellisense.js" />
     <Content Include="Functions\FunctionFile.html" />
     <Content Include="Functions\FunctionFile.js" />
     <Content Include="Home.css" />
@@ -137,15 +146,16 @@
     <Content Include="Images\Button80x80.png" />
     <Content Include="Images\Close.png" />
     <Content Include="Scripts\FabricUI\MessageBanner.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Scripts\jQuery\jquery-1.9.1.js" />
+    <Content Include="Scripts\jQuery\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jQuery\jquery-1.9.1.min.map" />
     <None Include="Scripts\_references.js" />
     <None Include="Scripts\Office\1\outlook-win32.debug-vsdoc.js" />
     <None Include="Scripts\Office\1\office-vsdoc.js" />
     <Content Include="Content\OfficeThemes.css" />
-    <Content Include="Scripts\jquery.fabric.js" />
-    <Content Include="Scripts\jquery.fabric.min.js" />
+    <Content Include="Scripts\jQuery\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jQuery\jquery.fabric.js" />
+    <Content Include="Scripts\jQuery\jquery.fabric.min.js" />
     <Content Include="Scripts\Office\1\access-web-16.00.debug.js" />
     <Content Include="Scripts\Office\1\access-web-16.00.js" />
     <Content Include="Scripts\Office\1\ar-sa\office_strings.debug.js" />
@@ -423,6 +433,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -18,7 +18,7 @@
   <DefaultLocale>en-US</DefaultLocale>
   <!-- Der Anzeigename Ihres Add-Ins. Er wird im Store und an verschiedenen Stellen in der Office-Benutzeroberfläche verwendet, z. B. im Dialogfeld "Add-Ins". -->
   <DisplayName DefaultValue="ChemWizard" />
-  <Description DefaultValue="ChemWizard"/>
+  <Description DefaultValue="ChemWizard helps you complete tables related to chemistry."/>
   <!-- Das Symbol für Ihr Add-In. Es wird auf Installationsbildschirmen und im Dialogfeld "Add-Ins" verwendet. -->
   <IconUrl DefaultValue="~remoteAppUrl/Images/Button32x32.png" />
 
@@ -56,53 +56,93 @@
           <!--"Dieser Code ermöglicht, dass eine anpassbare Meldung angezeigt wird, wenn das Add-In der einzelnen Installation erfolgreich geladen wird."-->
           <GetStarted>
             <!-- Der Titel des Popups "Erste Schritte". Das resid-Attribut verweist auf eine ShortString-Ressource. -->
-            <Title resid="Contoso.GetStarted.Title"/>
+            <Title resid="BeWeStd.GetStarted.Title"/>
 
             <!-- Die Beschreibung des Popups "Erste Schritte". "resid" verweist auf eine LongString-Ressource. -->
-            <Description resid="Contoso.GetStarted.Description"/>
+            <Description resid="BeWeStd.GetStarted.Description"/>
 
             <!-- Zeigt auf eine URL-Ressource, die ausführlich beschreibt, wie das Add-In verwendet werden sollte. -->
-            <LearnMoreUrl resid="Contoso.GetStarted.LearnMoreUrl"/>
+            <LearnMoreUrl resid="BeWeStd.GetStarted.LearnMoreUrl"/>
           </GetStarted>
           <!-- Die Funktionsdatei ist eine HTML-Seite mit JavaScript, auf der Funktionen für "ExecuteAction" aufgerufen werden.              Betrachten Sie "FunctionFile" als CodeBehind-ExecuteFunction. -->
-          <FunctionFile resid="Contoso.DesktopFunctionFile.Url" />
+          <FunctionFile resid="BeWeStd.DesktopFunctionFile.Url" />
 
           <!-- "PrimaryCommandSurface" ist das zentrale Office-Menüband. -->
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
             <!-- Verwenden Sie "OfficeTab", um eine vorhandene Registerkarte zu erweitern. Verwenden Sie "CustomTab" zum Erstellen einer neuen Registerkarte. -->
             <OfficeTab id="TabHome">
               <!-- Stellen Sie sicher, dass Sie eine eindeutige ID für die Gruppe angeben. Es wird für alle IDs empfohlen, einen Namespace mithilfe Ihres Firmennamens zu erstellen. -->
-              <Group id="Contoso.Group1">
+              <Group id="BeWeStd.Group1">
                 <!-- Die Bezeichnung für Ihre Gruppe. "resid" muss auf eine ShortString-Ressource verweisen. -->
-                <Label resid="Contoso.Group1Label" />
+                <Label resid="BeWeStd.Group1Label" />
                 <!-- Symbole. Erforderliche Größen sind 16, 32, 80 und optional 20, 24, 40, 48, 64. Es wird dringend empfohlen, alle Größen für eine optimale UX anzugeben. -->
                 <!-- Verwenden Sie PNG-Symbole. Alle URLs im Ressourcenabschnitt müssen HTTPS verwenden. -->
                 <Icon>
-                  <bt:Image size="16" resid="Contoso.tpicon_16x16" />
-                  <bt:Image size="32" resid="Contoso.tpicon_32x32" />
-                  <bt:Image size="80" resid="Contoso.tpicon_80x80" />
+                  <bt:Image size="16" resid="BeWeStd.tpicon_16x16" />
+                  <bt:Image size="32" resid="BeWeStd.tpicon_32x32" />
+                  <bt:Image size="80" resid="BeWeStd.tpicon_80x80" />
                 </Icon>
 
                 <!-- Ein Steuerelement. Es kann vom Typ "Button" oder "Menu" sein. -->
-                <Control xsi:type="Button" id="Contoso.TaskpaneButton">
-                  <Label resid="Contoso.TaskpaneButton.Label" />
+                <Control xsi:type="Button" id="BeWeStd.TaskpaneBtn.Info">
+                  <Label resid="BeWeStd.TaskpaneBtn.Info.Label" />
                   <Supertip>
                     <!-- Der Titel der QuickInfo. "resid" muss auf eine ShortString-Ressource verweisen. -->
-                    <Title resid="Contoso.TaskpaneButton.Label" />
+                    <Title resid="BeWeStd.TaskpaneBtn.Info.Label" />
                     <!-- Die Beschreibung der QuickInfo. "resid" muss auf eine LongString-Ressource verweisen. -->
-                    <Description resid="Contoso.TaskpaneButton.Tooltip" />
+                    <Description resid="BeWeStd.TaskpaneBtn.Info.Tooltip" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Contoso.tpicon_16x16" />
-                    <bt:Image size="32" resid="Contoso.tpicon_32x32" />
-                    <bt:Image size="80" resid="Contoso.tpicon_80x80" />
+                    <bt:Image size="16" resid="BeWeStd.infoicon_16x16" />
+                    <bt:Image size="32" resid="BeWeStd.infoicon_32x32" />
+                    <bt:Image size="80" resid="BeWeStd.infoicon_80x80" />
                   </Icon>
 
                   <!-- Die Aktion, die ausgeführt wird, wenn der Befehl ausgelöst wird (z. B. durch Klicken auf das Menüband). Unterstützte Aktionen sind "ExecuteFunction" und "ShowTaskpane". -->
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>ButtonId1</TaskpaneId>
                     <!-- Gibt eine URL-Ressourcen-ID für den Speicherort an, der im Aufgabenbereich angezeigt wird. -->
-                    <SourceLocation resid="Contoso.Taskpane.Url" />
+                    <SourceLocation resid="BeWeStd.Taskpane.Url" />
+                  </Action>
+                </Control>
+                <!-- control button to completeTable with PubChem data -->
+               <Control xsi:type="Button" id="BeWeStd.TaskpaneButton.CompleteTable">
+                  <Label resid="BeWeStd.TaskpaneBtn.PubC.Label" />
+                  <Supertip>
+                    <!-- Der Titel der QuickInfo. "resid" muss auf eine ShortString-Ressource verweisen. -->
+                    <Title resid="BeWeStd.TaskpaneBtn.PubC.Label" />
+                    <!-- Die Beschreibung der QuickInfo. "resid" muss auf eine LongString-Ressource verweisen. -->
+                    <Description resid="BeWeStd.TaskpaneBtn.PubC.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="BeWeStd.pubCicon_16x16" />
+                    <bt:Image size="32" resid="BeWeStd.pubCicon_32x32" />
+                    <bt:Image size="80" resid="BeWeStd.pubCicon_80x80" />
+                  </Icon>
+
+                  <!-- Die Aktion, die ausgeführt wird, wenn der Befehl ausgelöst wird (z. B. durch Klicken auf das Menüband). Unterstützte Aktionen sind "ExecuteFunction" und "ShowTaskpane". -->
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>completeTable</FunctionName>
+                  </Action>
+                </Control>
+               <!-- control button to translate H & P identifiers to sentences -->
+               <Control xsi:type="Button" id="BeWeStd.TaskpaneButton.CompleteHP">
+                  <Label resid="BeWeStd.TaskpaneBtn.HP.Label" />
+                  <Supertip>
+                    <!-- Der Titel der QuickInfo. "resid" muss auf eine ShortString-Ressource verweisen. -->
+                    <Title resid="BeWeStd.TaskpaneBtn.HP.Label" />
+                    <!-- Die Beschreibung der QuickInfo. "resid" muss auf eine LongString-Ressource verweisen. -->
+                    <Description resid="BeWeStd.TaskpaneBtn.HP.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="BeWeStd.hpicon_16x16" />
+                    <bt:Image size="32" resid="BeWeStd.hpicon_32x32" />
+                    <bt:Image size="80" resid="BeWeStd.hpicon_80x80" />
+                  </Icon>
+
+                  <!-- Die Aktion, die ausgeführt wird, wenn der Befehl ausgelöst wird (z. B. durch Klicken auf das Menüband). Unterstützte Aktionen sind "ExecuteFunction" und "ShowTaskpane". -->
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>resolveHPSentences</FunctionName>
                   </Action>
                 </Control>
               </Group>
@@ -115,25 +155,42 @@
     <!-- Sie können Ressourcen host- und formfaktorübergreifend verwenden. -->
     <Resources>
       <bt:Images>
-        <bt:Image id="Contoso.tpicon_16x16" DefaultValue="~remoteAppUrl/Images/Button16x16.png" />
-        <bt:Image id="Contoso.tpicon_32x32" DefaultValue="~remoteAppUrl/Images/Button32x32.png" />
-        <bt:Image id="Contoso.tpicon_80x80" DefaultValue="~remoteAppUrl/Images/Button80x80.png" />
+        <bt:Image id="BeWeStd.tpicon_16x16" DefaultValue="~remoteAppUrl/Images/Button16x16.png" />
+        <bt:Image id="BeWeStd.tpicon_32x32" DefaultValue="~remoteAppUrl/Images/Button32x32.png" />
+        <bt:Image id="BeWeStd.tpicon_80x80" DefaultValue="~remoteAppUrl/Images/Button80x80.png" />
+        <!-- info icon -->
+        <bt:Image id="BeWeStd.infoicon_16x16" DefaultValue="~remoteAppUrl/Images/Buttons/BtnInfo16.png" />
+        <bt:Image id="BeWeStd.infoicon_32x32" DefaultValue="~remoteAppUrl/Images/Buttons/BtnInfo32.png" />
+        <bt:Image id="BeWeStd.infoicon_80x80" DefaultValue="~remoteAppUrl/Images/Buttons/BtnInfo80.png" />
+        <!-- PubChem search icon -->
+        <bt:Image id="BeWeStd.pubCicon_16x16" DefaultValue="~remoteAppUrl/Images/Buttons/BtnPubC16.png" />
+        <bt:Image id="BeWeStd.pubCicon_32x32" DefaultValue="~remoteAppUrl/Images/Buttons/BtnPubC32.png" />
+        <bt:Image id="BeWeStd.pubCicon_80x80" DefaultValue="~remoteAppUrl/Images/Buttons/BtnPubC80.png" />
+        <!-- H & P icon -->
+        <bt:Image id="BeWeStd.hpicon_16x16" DefaultValue="~remoteAppUrl/Images/Buttons/BtnHP16.png" />
+        <bt:Image id="BeWeStd.hpicon_32x32" DefaultValue="~remoteAppUrl/Images/Buttons/BtnHP32.png" />
+        <bt:Image id="BeWeStd.hpicon_80x80" DefaultValue="~remoteAppUrl/Images/Buttons/BtnHP80.png" />
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="Contoso.DesktopFunctionFile.Url" DefaultValue="~remoteAppUrl/Functions/FunctionFile.html" />
-        <bt:Url id="Contoso.Taskpane.Url" DefaultValue="~remoteAppUrl/Home.html" />
-        <bt:Url id="Contoso.GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812" />
+        <bt:Url id="BeWeStd.DesktopFunctionFile.Url" DefaultValue="~remoteAppUrl/Functions/FunctionFile.html" />
+        <bt:Url id="BeWeStd.Taskpane.Url" DefaultValue="~remoteAppUrl/Home.html" />
+        <bt:Url id="BeWeStd.Homejs.Url" DefaultValue="~remoteAppUrl/Home.js" />
+        <bt:Url id="BeWeStd.GetStarted.LearnMoreUrl" DefaultValue="https://github.com/BernhardWebstudio/ChemWizard" />
       </bt:Urls>
       <!-- Maximal zulässige Zeichen für "ShortStrings" = 125. -->
       <bt:ShortStrings>
-        <bt:String id="Contoso.TaskpaneButton.Label" DefaultValue="Show Taskpane" />
-        <bt:String id="Contoso.Group1Label" DefaultValue="Commands Group" />
-        <bt:String id="Contoso.GetStarted.Title" DefaultValue="Get started with your sample add-in!" />
+        <bt:String id="BeWeStd.TaskpaneBtn.Info.Label" DefaultValue="Info" />
+        <bt:String id="BeWeStd.TaskpaneBtn.PubC.Label" DefaultValue="Fetch PubChem" />
+        <bt:String id="BeWeStd.TaskpaneBtn.HP.Label" DefaultValue="Resolve H&amp;P sentences" />
+        <bt:String id="BeWeStd.Group1Label" DefaultValue="ChemWizard" />
+        <bt:String id="BeWeStd.GetStarted.Title" DefaultValue="Use Chemwizard to complete your chemistry data!" />
       </bt:ShortStrings>
       <!-- Maximal zulässige Zeichen für "LongStrings" = 250. -->
       <bt:LongStrings>
-        <bt:String id="Contoso.TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane" />
-        <bt:String id="Contoso.GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Show Taskpane' button to get started." />
+        <bt:String id="BeWeStd.TaskpaneBtn.Info.Tooltip" DefaultValue="Click to Show a Taskpane with further information" />
+        <bt:String id="BeWeStd.TaskpaneBtn.PubC.Tooltip" DefaultValue="Click to complete selected table with data from PubChem" />
+        <bt:String id="BeWeStd.TaskpaneBtn.HP.Tooltip" DefaultValue="Click to replace H &amp; P codes in a selected table with the corresponding sentences" />
+        <bt:String id="BeWeStd.GetStarted.Description" DefaultValue="ChemWizard installed succesfully. Go to the HOME tab, select a table and click a button to get started." />
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
