@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!--Created:ce44715c-8c4e-446b-879c-ea9ebe0f09c8-->
-<OfficeApp 
-          xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-          xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" 
+<OfficeApp
+          xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
           xsi:type="TaskPaneApp">
 
@@ -13,24 +13,24 @@
   <Id>dcd7716a-def5-4394-b70a-6445a14f8fe4</Id>
 
   <!--Die Version. Updates aus dem Store werden nur ausgelöst, wenn eine Versionsänderung vorliegt. -->
-  <Version>1.0.0.0</Version>
+  <Version>1.0.0.1</Version>
   <ProviderName>Bernhard Webstudio</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <!-- Der Anzeigename Ihres Add-Ins. Er wird im Store und an verschiedenen Stellen in der Office-Benutzeroberfläche verwendet, z. B. im Dialogfeld "Add-Ins". -->
   <DisplayName DefaultValue="ChemWizard" />
   <Description DefaultValue="ChemWizard helps you complete tables related to chemistry."/>
   <!-- Das Symbol für Ihr Add-In. Es wird auf Installationsbildschirmen und im Dialogfeld "Add-Ins" verwendet. -->
-  <IconUrl DefaultValue="~remoteAppUrl/Images/Button32x32.png" />
+  <IconUrl DefaultValue="~remoteAppUrl/Images/logo.png" />
 
-  <SupportUrl DefaultValue="http://bernhard-webstudio.ch" />
+  <SupportUrl DefaultValue="https://twitter.com/BernhardWStudio" />
   <!-- Domänen, die beim Navigieren zulässig sind. Wenn Sie z. B. "ShowTaskpane" verwenden und dann ein href-Link auftritt, ist die Navigation nur zulässig, wenn sich die Domäne in dieser Liste befindet. -->
   <AppDomains>
-    <AppDomain>AppDomain1</AppDomain>
-    <AppDomain>AppDomain2</AppDomain>
-    <AppDomain>AppDomain3</AppDomain>
+    <!--<AppDomain>AppDomain1</AppDomain>
+    <AppDomain>AppDomain2</AppDomain>-->
+    <AppDomain>https://pubchem.ncbi.nlm.nih.gov/</AppDomain>
   </AppDomains>
   <!--Beendet die Standardeinstellungen. -->
-  
+
   <!--Beginnt die Integration im TaskPane-Modus. Dieser Abschnitt wird verwendet, wenn keine "VersionOverrides" vorhanden sind oder die Office-Clientversion keine Add-In-Befehle unterstützt. -->
   <Hosts>
     <Host Name="Document" />
@@ -44,7 +44,7 @@
 
   <!-- Beginnt die Integration im Add-In-Befehlsmodus. -->
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
-    
+
     <!-- Der Hosts-Knoten ist erforderlich. -->
     <Hosts>
       <!-- Jeder Host kann über einen anderen Satz von Befehlen verfügen. -->
@@ -80,6 +80,7 @@
                 <Icon>
                   <bt:Image size="16" resid="BeWeStd.tpicon_16x16" />
                   <bt:Image size="32" resid="BeWeStd.tpicon_32x32" />
+                  <bt:Image size="32" resid="BeWeStd.tpicon_64x64" />
                   <bt:Image size="80" resid="BeWeStd.tpicon_80x80" />
                 </Icon>
 
@@ -106,7 +107,7 @@
                   </Action>
                 </Control>
                 <!-- control button to completeTable with PubChem data -->
-               <Control xsi:type="Button" id="BeWeStd.TaskpaneButton.CompleteTable">
+                <Control xsi:type="Button" id="BeWeStd.TaskpaneButton.CompleteTable">
                   <Label resid="BeWeStd.TaskpaneBtn.PubC.Label" />
                   <Supertip>
                     <!-- Der Titel der QuickInfo. "resid" muss auf eine ShortString-Ressource verweisen. -->
@@ -125,8 +126,8 @@
                     <FunctionName>completeTable</FunctionName>
                   </Action>
                 </Control>
-               <!-- control button to translate H & P identifiers to sentences -->
-               <Control xsi:type="Button" id="BeWeStd.TaskpaneButton.CompleteHP">
+                <!-- control button to translate H & P identifiers to sentences -->
+                <Control xsi:type="Button" id="BeWeStd.TaskpaneButton.CompleteHP">
                   <Label resid="BeWeStd.TaskpaneBtn.HP.Label" />
                   <Supertip>
                     <!-- Der Titel der QuickInfo. "resid" muss auf eine ShortString-Ressource verweisen. -->
@@ -151,13 +152,14 @@
         </DesktopFormFactor>
       </Host>
     </Hosts>
-    
+
     <!-- Sie können Ressourcen host- und formfaktorübergreifend verwenden. -->
     <Resources>
       <bt:Images>
-        <bt:Image id="BeWeStd.tpicon_16x16" DefaultValue="~remoteAppUrl/Images/Button16x16.png" />
-        <bt:Image id="BeWeStd.tpicon_32x32" DefaultValue="~remoteAppUrl/Images/Button32x32.png" />
-        <bt:Image id="BeWeStd.tpicon_80x80" DefaultValue="~remoteAppUrl/Images/Button80x80.png" />
+        <bt:Image id="BeWeStd.tpicon_16x16" DefaultValue="~remoteAppUrl/Images/Buttons/BtnLogo16.png" />
+        <bt:Image id="BeWeStd.tpicon_32x32" DefaultValue="~remoteAppUrl/Images/Buttons/BtnLogo32.png" />
+        <bt:Image id="BeWeStd.tpicon_64x64" DefaultValue="~remoteAppUrl/Images/Buttons/BtnLogo64.png" />
+        <bt:Image id="BeWeStd.tpicon_80x80" DefaultValue="~remoteAppUrl/Images/Buttons/BtnLogo80.png" />
         <!-- info icon -->
         <bt:Image id="BeWeStd.infoicon_16x16" DefaultValue="~remoteAppUrl/Images/Buttons/BtnInfo16.png" />
         <bt:Image id="BeWeStd.infoicon_32x32" DefaultValue="~remoteAppUrl/Images/Buttons/BtnInfo32.png" />

@@ -8,6 +8,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <ProfileToSelectInPublishDialog>ChemWizard - Web Deploy</ProfileToSelectInPublishDialog>
+    <NameOfLastUsedPublishProfile>ChemWizard - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

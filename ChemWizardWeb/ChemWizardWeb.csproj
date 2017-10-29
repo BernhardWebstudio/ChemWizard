@@ -73,9 +73,14 @@
     <Content Include="Images\Buttons\BtnInfo16.png" />
     <Content Include="Images\Buttons\BtnInfo32.png" />
     <Content Include="Images\Buttons\BtnInfo80.png" />
+    <Content Include="Images\Buttons\BtnLogo16.png" />
+    <Content Include="Images\Buttons\BtnLogo32.png" />
+    <Content Include="Images\Buttons\BtnLogo64.png" />
+    <Content Include="Images\Buttons\BtnLogo80.png" />
     <Content Include="Images\Buttons\BtnPubC16.png" />
     <Content Include="Images\Buttons\BtnPubC32.png" />
     <Content Include="Images\Buttons\BtnPubC80.png" />
+    <Content Include="Images\logo.png" />
     <Content Include="packages.config" />
     <Content Include="Scripts\Data\hazard-statements.json" />
     <Content Include="Scripts\Data\precautionary-statements.json" />
@@ -86,6 +91,8 @@
     <Content Include="Scripts\Data\precautionary-statements.js" />
     <Content Include="Scripts\Data\risk-phrases.js" />
     <Content Include="Scripts\Data\safety-phrases.js" />
+    <None Include="Properties\PublishProfiles\ChemWizard - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\ChemWizard - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -141,9 +148,6 @@
     <Content Include="Home.html" />
     <Content Include="Home.js" />
     <Content Include="Images\AddinIcon.png" />
-    <Content Include="Images\Button16x16.png" />
-    <Content Include="Images\Button32x32.png" />
-    <Content Include="Images\Button80x80.png" />
     <Content Include="Images\Close.png" />
     <Content Include="Scripts\FabricUI\MessageBanner.js" />
     <Content Include="Scripts\jQuery\jquery-1.9.1.js" />

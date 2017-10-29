@@ -16,7 +16,7 @@
 
             // Wenn nicht Word 2016 verwendet wird, Fallbacklogik verwenden.
             if (!Office.context.requirements.isSetSupported('WordApi', '1.3')) {
-                $("#template-description").text("Dieses Plugin benötigt eine neuere Version von Word.");
+                $("#template-description").text("This plugin requires a newer version of Word.");
                 return;
             }
 
@@ -32,7 +32,7 @@
     //$$(Helper function for treating errors, $loc_script_taskpane_home_js_comment34$)$$
     function errorHandler(error) {
         // $$(Always be sure to catch any accumulated errors that bubble up from the Word.run execution., $loc_script_taskpane_home_js_comment35$)$$
-        showNotification("Fehler:", error);
+        showNotification("Error:", error);
         console.warn("Error: " + error);
         console.log(error);
         if (error instanceof OfficeExtension.Error) {
