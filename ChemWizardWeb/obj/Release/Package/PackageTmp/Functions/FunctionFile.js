@@ -1,6 +1,6 @@
 ﻿// Die Initialisierungsfunktion muss bei jedem Laden einer neuen Seite ausgeführt werden.
 (function () {
-    if (Office != undefined) {
+    if (Office !== undefined) {
         Office.initialize = function (reason) {
             // Wenn eine Initialisierung erfolgen muss, kann dies hier geschehen.
             console.log("init");
@@ -35,8 +35,11 @@ function completeTable(event) {
                             if ((table.values[row][column].trim() == "" || !table.values[row][column]) && table.values[row][0] && table.values[0][column]) {
                                 // TODO: load more than one datapoint at once. 
                                 // e.g. comma separated. docs: https://pubchem.ncbi.nlm.nih.gov/pug_rest/PUG_REST.html#_Toc458584210
+                                var compound = pascalize(table.values[row][0]);
+                                var property = pascalize(table.values[0][column]);
+                                console.log("loading " + property + " of " + compound);
                                 $.ajax({
-                                    url: "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/" + pascalize(table.values[row][0]) + "/property/" + table.values[0][column] + "/txt",
+                                    url: "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/" + compound + "/property/" + property + "/txt",
                                     async: false
                                 }).done(function (data) {
                                     // insert data
@@ -48,7 +51,7 @@ function completeTable(event) {
                                         console.log("0");
                                         errorHandler(e);
                                     });
-                                }).error(function (e) {
+                                }).fail(function (e) {
                                     console.log("1");
                                     errorHandler(e);
                                 });
@@ -131,7 +134,7 @@ function resolveHPSentences(event) {
             }).catch(errorHandler);
     }).then(function () {
         endEvent(event);
-        }).catch(errorHandler);
+    }).catch(errorHandler);
     if (event) {
         event.completed();
     }
@@ -184,8 +187,9 @@ function displaySelectedText() {
 }
 
 function pascalize(s) {
-    return s.replace(/(\w)(\w*)/g,
+    s = s.replace(/(\w)(\w*)/g,
         function (g0, g1, g2) { return g1.toUpperCase() + g2.toLowerCase(); });
+    return s.replace(/\s/g, '');
 }
 
 function errorHandler(e) {

@@ -102,3 +102,4 @@ D:\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizardWeb\bin\Microsoft
 D:\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizardWeb\obj\Debug\ChemWizardWeb.csproj.CoreCompileInputs.cache
 D:\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizardWeb\obj\Debug\ChemWizardWeb.dll
 D:\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizardWeb\obj\Debug\ChemWizardWeb.pdb
+D:\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizardWeb\obj\Debug\ChemWizardWeb.csprojResolveAssemblyReference.cache

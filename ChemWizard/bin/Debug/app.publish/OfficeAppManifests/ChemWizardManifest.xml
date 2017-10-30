@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Published:920014D5-5E5A-442D-934A-437E4FB0A4DA-->
+<!--Created:ce44715c-8c4e-446b-879c-ea9ebe0f09c8-->
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+
+  <!-- Beginn mit Standardeinstellungen: Add-In-Metadaten, die für alle Versionen von Office verwendet werden, wenn keine Überschreibungen bereitgestellt werden. -->
+
+  <!-- WICHTIG: Die ID muss eindeutig für Ihr Add-In sein. Wenn Sie dieses Manifest erneut verwenden, stellen Sie sicher, dass Sie diese ID in eine neue GUID ändern. -->
+  <Id>dcd7716a-def5-4394-b70a-6445a14f8fe4</Id>
+
+  <!--Die Version. Updates aus dem Store werden nur ausgelöst, wenn eine Versionsänderung vorliegt. -->
+  <Version>1.0.0.2</Version>
+  <ProviderName>Bernhard Webstudio</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <!-- Der Anzeigename Ihres Add-Ins. Er wird im Store und an verschiedenen Stellen in der Office-Benutzeroberfläche verwendet, z. B. im Dialogfeld "Add-Ins". -->
+  <DisplayName DefaultValue="ChemWizard" />
+  <Description DefaultValue="ChemWizard helps you complete tables related to chemistry." />
+  <!-- Das Symbol für Ihr Add-In. Es wird auf Installationsbildschirmen und im Dialogfeld "Add-Ins" verwendet. -->
+  <IconUrl DefaultValue="https://chemwizard.azurewebsites.net/Images/logo.png" />
+
+  <SupportUrl DefaultValue="https://twitter.com/BernhardWStudio" />
+  <!-- Domänen, die beim Navigieren zulässig sind. Wenn Sie z. B. "ShowTaskpane" verwenden und dann ein href-Link auftritt, ist die Navigation nur zulässig, wenn sich die Domäne in dieser Liste befindet. -->
+  <AppDomains>
+    <!--<AppDomain>AppDomain1</AppDomain>
+    <AppDomain>AppDomain2</AppDomain>-->
+    <AppDomain>https://pubchem.ncbi.nlm.nih.gov/</AppDomain>
+  </AppDomains>
+  <!--Beendet die Standardeinstellungen. -->
+
+  <!--Beginnt die Integration im TaskPane-Modus. Dieser Abschnitt wird verwendet, wenn keine "VersionOverrides" vorhanden sind oder die Office-Clientversion keine Add-In-Befehle unterstützt. -->
+  <Hosts>
+    <Host Name="Document" />
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://chemwizard.azurewebsites.net/Home.html" />
+  </DefaultSettings>
+  <!-- Beendet die Integration im TaskPane-Modus.  -->
+
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <!-- Beginnt die Integration im Add-In-Befehlsmodus. -->
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+
+    <!-- Der Hosts-Knoten ist erforderlich. -->
+    <Hosts>
+      <!-- Jeder Host kann über einen anderen Satz von Befehlen verfügen. -->
+      <!-- Der Excel-Host stellt die Arbeitsmappe dar, der Word-Host das Dokument und der PowerPoint-Host die Präsentation. -->
+      <!-- Stellen Sie sicher, dass die Hosts, die Sie überschreiben, mit den im obersten Bereich des Manifests deklarierten Hosts übereinstimmen. -->
+      <Host xsi:type="Document">
+        <!-- Der Formfaktor. Zurzeit wird nur "DesktopFormFactor" unterstützt. -->
+        <DesktopFormFactor>
+          <!--"Dieser Code ermöglicht, dass eine anpassbare Meldung angezeigt wird, wenn das Add-In der einzelnen Installation erfolgreich geladen wird."-->
+          <GetStarted>
+            <!-- Der Titel des Popups "Erste Schritte". Das resid-Attribut verweist auf eine ShortString-Ressource. -->
+            <Title resid="BeWeStd.GetStarted.Title" />
+
+            <!-- Die Beschreibung des Popups "Erste Schritte". "resid" verweist auf eine LongString-Ressource. -->
+            <Description resid="BeWeStd.GetStarted.Description" />
+
+            <!-- Zeigt auf eine URL-Ressource, die ausführlich beschreibt, wie das Add-In verwendet werden sollte. -->
+            <LearnMoreUrl resid="BeWeStd.GetStarted.LearnMoreUrl" />
+          </GetStarted>
+          <!-- Die Funktionsdatei ist eine HTML-Seite mit JavaScript, auf der Funktionen für "ExecuteAction" aufgerufen werden.              Betrachten Sie "FunctionFile" als CodeBehind-ExecuteFunction. -->
+          <FunctionFile resid="BeWeStd.DesktopFunctionFile.Url" />
+
+          <!-- "PrimaryCommandSurface" ist das zentrale Office-Menüband. -->
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <!-- Verwenden Sie "OfficeTab", um eine vorhandene Registerkarte zu erweitern. Verwenden Sie "CustomTab" zum Erstellen einer neuen Registerkarte. -->
+            <OfficeTab id="TabHome">
+              <!-- Stellen Sie sicher, dass Sie eine eindeutige ID für die Gruppe angeben. Es wird für alle IDs empfohlen, einen Namespace mithilfe Ihres Firmennamens zu erstellen. -->
+              <Group id="BeWeStd.Group1">
+                <!-- Die Bezeichnung für Ihre Gruppe. "resid" muss auf eine ShortString-Ressource verweisen. -->
+                <Label resid="BeWeStd.Group1Label" />
+                <!-- Symbole. Erforderliche Größen sind 16, 32, 80 und optional 20, 24, 40, 48, 64. Es wird dringend empfohlen, alle Größen für eine optimale UX anzugeben. -->
+                <!-- Verwenden Sie PNG-Symbole. Alle URLs im Ressourcenabschnitt müssen HTTPS verwenden. -->
+                <Icon>
+                  <bt:Image size="16" resid="BeWeStd.tpicon_16x16" />
+                  <bt:Image size="32" resid="BeWeStd.tpicon_32x32" />
+                  <bt:Image size="32" resid="BeWeStd.tpicon_64x64" />
+                  <bt:Image size="80" resid="BeWeStd.tpicon_80x80" />
+                </Icon>
+
+                <!-- Ein Steuerelement. Es kann vom Typ "Button" oder "Menu" sein. -->
+                <Control xsi:type="Button" id="BeWeStd.TaskpaneBtn.Info">
+                  <Label resid="BeWeStd.TaskpaneBtn.Info.Label" />
+                  <Supertip>
+                    <!-- Der Titel der QuickInfo. "resid" muss auf eine ShortString-Ressource verweisen. -->
+                    <Title resid="BeWeStd.TaskpaneBtn.Info.Label" />
+                    <!-- Die Beschreibung der QuickInfo. "resid" muss auf eine LongString-Ressource verweisen. -->
+                    <Description resid="BeWeStd.TaskpaneBtn.Info.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="BeWeStd.infoicon_16x16" />
+                    <bt:Image size="32" resid="BeWeStd.infoicon_32x32" />
+                    <bt:Image size="80" resid="BeWeStd.infoicon_80x80" />
+                  </Icon>
+
+                  <!-- Die Aktion, die ausgeführt wird, wenn der Befehl ausgelöst wird (z. B. durch Klicken auf das Menüband). Unterstützte Aktionen sind "ExecuteFunction" und "ShowTaskpane". -->
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>ButtonId1</TaskpaneId>
+                    <!-- Gibt eine URL-Ressourcen-ID für den Speicherort an, der im Aufgabenbereich angezeigt wird. -->
+                    <SourceLocation resid="BeWeStd.Taskpane.Url" />
+                  </Action>
+                </Control>
+                <!-- control button to completeTable with PubChem data -->
+                <Control xsi:type="Button" id="BeWeStd.TaskpaneButton.CompleteTable">
+                  <Label resid="BeWeStd.TaskpaneBtn.PubC.Label" />
+                  <Supertip>
+                    <!-- Der Titel der QuickInfo. "resid" muss auf eine ShortString-Ressource verweisen. -->
+                    <Title resid="BeWeStd.TaskpaneBtn.PubC.Label" />
+                    <!-- Die Beschreibung der QuickInfo. "resid" muss auf eine LongString-Ressource verweisen. -->
+                    <Description resid="BeWeStd.TaskpaneBtn.PubC.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="BeWeStd.pubCicon_16x16" />
+                    <bt:Image size="32" resid="BeWeStd.pubCicon_32x32" />
+                    <bt:Image size="80" resid="BeWeStd.pubCicon_80x80" />
+                  </Icon>
+
+                  <!-- Die Aktion, die ausgeführt wird, wenn der Befehl ausgelöst wird (z. B. durch Klicken auf das Menüband). Unterstützte Aktionen sind "ExecuteFunction" und "ShowTaskpane". -->
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>completeTable</FunctionName>
+                  </Action>
+                </Control>
+                <!-- control button to translate H & P identifiers to sentences -->
+                <Control xsi:type="Button" id="BeWeStd.TaskpaneButton.CompleteHP">
+                  <Label resid="BeWeStd.TaskpaneBtn.HP.Label" />
+                  <Supertip>
+                    <!-- Der Titel der QuickInfo. "resid" muss auf eine ShortString-Ressource verweisen. -->
+                    <Title resid="BeWeStd.TaskpaneBtn.HP.Label" />
+                    <!-- Die Beschreibung der QuickInfo. "resid" muss auf eine LongString-Ressource verweisen. -->
+                    <Description resid="BeWeStd.TaskpaneBtn.HP.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="BeWeStd.hpicon_16x16" />
+                    <bt:Image size="32" resid="BeWeStd.hpicon_32x32" />
+                    <bt:Image size="80" resid="BeWeStd.hpicon_80x80" />
+                  </Icon>
+
+                  <!-- Die Aktion, die ausgeführt wird, wenn der Befehl ausgelöst wird (z. B. durch Klicken auf das Menüband). Unterstützte Aktionen sind "ExecuteFunction" und "ShowTaskpane". -->
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>resolveHPSentences</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <!-- Sie können Ressourcen host- und formfaktorübergreifend verwenden. -->
+    <Resources>
+      <bt:Images>
+        <bt:Image id="BeWeStd.tpicon_16x16" DefaultValue="https://chemwizard.azurewebsites.net/Images/Buttons/BtnLogo16.png" />
+        <bt:Image id="BeWeStd.tpicon_32x32" DefaultValue="https://chemwizard.azurewebsites.net/Images/Buttons/BtnLogo32.png" />
+        <bt:Image id="BeWeStd.tpicon_64x64" DefaultValue="https://chemwizard.azurewebsites.net/Images/Buttons/BtnLogo64.png" />
+        <bt:Image id="BeWeStd.tpicon_80x80" DefaultValue="https://chemwizard.azurewebsites.net/Images/Buttons/BtnLogo80.png" />
+        <!-- info icon -->
+        <bt:Image id="BeWeStd.infoicon_16x16" DefaultValue="https://chemwizard.azurewebsites.net/Images/Buttons/BtnInfo16.png" />
+        <bt:Image id="BeWeStd.infoicon_32x32" DefaultValue="https://chemwizard.azurewebsites.net/Images/Buttons/BtnInfo32.png" />
+        <bt:Image id="BeWeStd.infoicon_80x80" DefaultValue="https://chemwizard.azurewebsites.net/Images/Buttons/BtnInfo80.png" />
+        <!-- PubChem search icon -->
+        <bt:Image id="BeWeStd.pubCicon_16x16" DefaultValue="https://chemwizard.azurewebsites.net/Images/Buttons/BtnPubC16.png" />
+        <bt:Image id="BeWeStd.pubCicon_32x32" DefaultValue="https://chemwizard.azurewebsites.net/Images/Buttons/BtnPubC32.png" />
+        <bt:Image id="BeWeStd.pubCicon_80x80" DefaultValue="https://chemwizard.azurewebsites.net/Images/Buttons/BtnPubC80.png" />
+        <!-- H & P icon -->
+        <bt:Image id="BeWeStd.hpicon_16x16" DefaultValue="https://chemwizard.azurewebsites.net/Images/Buttons/BtnHP16.png" />
+        <bt:Image id="BeWeStd.hpicon_32x32" DefaultValue="https://chemwizard.azurewebsites.net/Images/Buttons/BtnHP32.png" />
+        <bt:Image id="BeWeStd.hpicon_80x80" DefaultValue="https://chemwizard.azurewebsites.net/Images/Buttons/BtnHP80.png" />
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="BeWeStd.DesktopFunctionFile.Url" DefaultValue="https://chemwizard.azurewebsites.net/Functions/FunctionFile.html" />
+        <bt:Url id="BeWeStd.Taskpane.Url" DefaultValue="https://chemwizard.azurewebsites.net/Home.html" />
+        <bt:Url id="BeWeStd.Homejs.Url" DefaultValue="https://chemwizard.azurewebsites.net/Home.js" />
+        <bt:Url id="BeWeStd.GetStarted.LearnMoreUrl" DefaultValue="https://github.com/BernhardWebstudio/ChemWizard" />
+      </bt:Urls>
+      <!-- Maximal zulässige Zeichen für "ShortStrings" = 125. -->
+      <bt:ShortStrings>
+        <bt:String id="BeWeStd.TaskpaneBtn.Info.Label" DefaultValue="Info" />
+        <bt:String id="BeWeStd.TaskpaneBtn.PubC.Label" DefaultValue="Fetch PubChem" />
+        <bt:String id="BeWeStd.TaskpaneBtn.HP.Label" DefaultValue="Resolve H&amp;P sentences" />
+        <bt:String id="BeWeStd.Group1Label" DefaultValue="ChemWizard" />
+        <bt:String id="BeWeStd.GetStarted.Title" DefaultValue="Use Chemwizard to complete your chemistry data!" />
+      </bt:ShortStrings>
+      <!-- Maximal zulässige Zeichen für "LongStrings" = 250. -->
+      <bt:LongStrings>
+        <bt:String id="BeWeStd.TaskpaneBtn.Info.Tooltip" DefaultValue="Click to Show a Taskpane with further information" />
+        <bt:String id="BeWeStd.TaskpaneBtn.PubC.Tooltip" DefaultValue="Click to complete selected table with data from PubChem" />
+        <bt:String id="BeWeStd.TaskpaneBtn.HP.Tooltip" DefaultValue="Click to replace H &amp; P codes in a selected table with the corresponding sentences" />
+        <bt:String id="BeWeStd.GetStarted.Description" DefaultValue="ChemWizard installed succesfully. Go to the HOME tab, select a table and click a button to get started." />
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+  <!-- Beendet die Integration im Add-In-Befehlsmodus. -->
+
+</OfficeApp>

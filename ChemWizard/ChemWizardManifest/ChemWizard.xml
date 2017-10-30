@@ -13,7 +13,7 @@
   <Id>dcd7716a-def5-4394-b70a-6445a14f8fe4</Id>
 
   <!--Die Version. Updates aus dem Store werden nur ausgelöst, wenn eine Versionsänderung vorliegt. -->
-  <Version>1.0.0.1</Version>
+  <Version>1.0.0.2</Version>
   <ProviderName>Bernhard Webstudio</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <!-- Der Anzeigename Ihres Add-Ins. Er wird im Store und an verschiedenen Stellen in der Office-Benutzeroberfläche verwendet, z. B. im Dialogfeld "Add-Ins". -->

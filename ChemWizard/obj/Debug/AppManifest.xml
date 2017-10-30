@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
      Name="ChemWizard"
-     ProductID="{de41d3ce-805a-425a-b7ca-5aa6dc5cf36c}"
+     ProductID="{4d5b45b7-8fbf-47b7-b0c4-8f5269f542fe}"
      Version="1.0.0.0"
      SharePointMinVersion="15.0.0.0"
 >

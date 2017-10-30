@@ -25,6 +25,10 @@ C:\Users\Tim\OneDrive\Programming\C#\ChemWizard\ChemWizard\ChemWizard\bin\Debug\
 C:\Users\Tim\OneDrive\Programming\C#\ChemWizard\ChemWizard\ChemWizard\bin\Debug\roslyn\VBCSCompiler.exe
 C:\Users\Tim\OneDrive\Programming\C#\ChemWizard\ChemWizard\ChemWizard\bin\Debug\roslyn\VBCSCompiler.exe.config
 C:\Users\Tim\OneDrive\Programming\C#\ChemWizard\ChemWizard\ChemWizard\obj\Debug\ChemWizard.csproj.CoreCompileInputs.cache
+C:\Users\Tim\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\obj\Debug\ChemWizard.csprojResolveAssemblyReference.cache
+C:\Users\Tim\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\obj\Debug\ChemWizard.csproj.CoreCompileInputs.cache
+D:\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\obj\Debug\ChemWizard.csproj.CoreCompileInputs.cache
+D:\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\obj\Debug\ChemWizard.csprojResolveAssemblyReference.cache
 C:\Users\Tim\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\bin\Debug\roslyn\csc.exe
 C:\Users\Tim\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\bin\Debug\roslyn\csc.exe.config
 C:\Users\Tim\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\bin\Debug\roslyn\csc.rsp
@@ -51,8 +55,6 @@ C:\Users\Tim\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\bin\De
 C:\Users\Tim\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\bin\Debug\roslyn\vbc.rsp
 C:\Users\Tim\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\bin\Debug\roslyn\VBCSCompiler.exe
 C:\Users\Tim\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\bin\Debug\roslyn\VBCSCompiler.exe.config
-C:\Users\Tim\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\obj\Debug\ChemWizard.csprojResolveAssemblyReference.cache
-C:\Users\Tim\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\obj\Debug\ChemWizard.csproj.CoreCompileInputs.cache
 D:\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\bin\Debug\roslyn\csc.exe
 D:\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\bin\Debug\roslyn\csc.exe.config
 D:\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\bin\Debug\roslyn\csc.rsp
@@ -79,4 +81,3 @@ D:\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\bin\Debug\roslyn
 D:\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\bin\Debug\roslyn\vbc.rsp
 D:\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\bin\Debug\roslyn\VBCSCompiler.exe
 D:\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\bin\Debug\roslyn\VBCSCompiler.exe.config
-D:\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\obj\Debug\ChemWizard.csproj.CoreCompileInputs.cache
