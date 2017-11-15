@@ -32,7 +32,7 @@ function completeTable(event) {
                     for (var column = 0; column < table.values[row].length; column++) {
                         // use closures to keep cell index variables for ajax
                         (function (row, column, table, context) {
-                            if ((table.values[row][column].trim() == "" || !table.values[row][column]) && table.values[row][0] && table.values[0][column]) {
+                            if ((table.values[row][column].trim() === "" || !table.values[row][column]) && table.values[row][0] && table.values[0][column]) {
                                 // TODO: load more than one datapoint at once. 
                                 // e.g. comma separated. docs: https://pubchem.ncbi.nlm.nih.gov/pug_rest/PUG_REST.html#_Toc458584210
                                 var compound = pascalize(table.values[row][0]);
@@ -147,11 +147,9 @@ function resolveHPSentence(identifier) {
         switch (mode) {
             case "P":
                 return identifier + ": " + loadPSentence(identifier) + "\n";
-                break;
             case "H":
             default:
                 return identifier + ": " + loadHSentence(identifier) + "\n";
-                break;
         }
     } catch (e) {
         console.log("0");

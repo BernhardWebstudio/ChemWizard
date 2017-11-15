@@ -1,1 +1,1 @@
-https://chemwizard.azurewebsites.net
+https://localhost:44338/

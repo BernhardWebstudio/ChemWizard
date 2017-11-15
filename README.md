@@ -20,6 +20,10 @@ the first column should contain the name of your contain. Available properties c
 Choose a table which contains identifiers for hazardous or precautionary statements, 
 e.g. "H201", and press the appropriate button. The plugin will replace it with "H201 : Explosive; mass explosion hazard".
 
+## Contributions
+Contributions are very welcome. Feel free to fork, change and send pull requests.
+
 ## TODO:
 [ ] be more flexible about table layout
-[ ] load H&P data & symbols for compounds
+[ ] load H&P data & safety symbols too from a database (which one?)
+[ ] design a more modern logo

@@ -1,2 +1,2 @@
 bin\Debug\OfficeAppManifests\ChemWizardManifest.xml
-C:\Users\Tim\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\bin\Debug\ChemWizard.debugapp
+D:\OneDrive\Programming\Office\ChemWizard\ChemWizard\ChemWizard\bin\Debug\ChemWizard.debugapp
