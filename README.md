@@ -27,3 +27,4 @@ Contributions are very welcome. Feel free to fork, change and send pull requests
 [ ] be more flexible about table layout
 [ ] load H&P data & safety symbols too from a database (which one?)
 [ ] design a more modern logo
+[ ] localize ([docs](https://dev.office.com/docs/add-ins/develop/localization))
