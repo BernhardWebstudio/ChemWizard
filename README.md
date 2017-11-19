@@ -6,7 +6,7 @@ table for a report, this plugin will help you save time by fetching the data fro
 hazardous and precautionary statements. Just select the table, which should be completed, and press the appropriate 
 button in the ribbon bar to complete the table. Read on to learn more on the available functions.
 
-## Available functions:
+## Functionality
 - complete table with PubChem data
 - translate H & P numbers to their appropriate equivalent numbers
 
@@ -19,6 +19,10 @@ the first column should contain the name of your contain. Available properties c
 ### Complete H & P sentences table with text
 Choose a table which contains identifiers for hazardous or precautionary statements, 
 e.g. "H201", and press the appropriate button. The plugin will replace it with "H201 : Explosive; mass explosion hazard".
+
+## Availability
+ChemWizard is available for Word 2016+, Word 2016 for Mac and Word Online and can be downloaded from the 
+[Office Add-in store](https://store.office.com/app.aspx?assetid=WA104381302&mktcmpid=GitHub&mktvid=PN42949681484).
 
 ## Contributions
 Contributions are very welcome. Feel free to fork, change and send pull requests.
