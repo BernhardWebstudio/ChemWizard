@@ -8,7 +8,7 @@ button in the ribbon bar to complete the table. Read on to learn more on the ava
 
 ## Functionality
 - complete table with PubChem data
-- translate H & P numbers to their appropriate equivalent numbers
+- translate H & P numbers to their appropriate equivalent sentences
 
 ### Complete table with PubChem
 Choose a table, which you want to complete and click the appropriate button.
