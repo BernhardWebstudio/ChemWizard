@@ -38,21 +38,15 @@ function completeTable(event) {
                                 var compound = pascalize(table.values[row][0]);
                                 var property = pascalize(table.values[0][column]);
                                 console.log("loading " + property + " of " + compound);
-                                $.ajax({
-                                    url: "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/" + compound + "/property/" + property + "/txt",
-                                    async: false
-                                }).done(function (data) {
-                                    // insert data
-                                    table.rows.items[row].cells.items[column].body.insertText(data, 'End');
-                                    console.log("data: " + data);
-                                    return context.sync().then(function () {
-                                        console.log("synced");
-                                    }).catch(function (e) {
-                                        console.log("0");
-                                        errorHandler(e);
-                                    });
-                                }).fail(function (e) {
-                                    console.log("1");
+                                var data = loadDataFromPubchem(compound, property);
+
+                                // insert data
+                                table.rows.items[row].cells.items[column].body.insertText(data, 'End');
+                                console.log("data: " + data);
+                                return context.sync().then(function () {
+                                    console.log("synced");
+                                }).catch(function (e) {
+                                    console.log("0");
                                     errorHandler(e);
                                 });
                             } else {
@@ -83,6 +77,54 @@ function completeTable(event) {
         });
 }
 
+/**
+ * Load propery of compound from PubChem
+ *
+ * @param {string} compound the search
+ * @param {string} property the property of the search
+ */
+function loadDataFromPubchem(compound, property) {
+    return getDataSync("https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/" + compound + "/property/" + property + "/txt");
+}
+
+/**
+ * Load Data from WikiData
+ * 
+ * @param {string} compound the search
+ * @param {string} property the property of the search
+ * */
+var wikidataCache = [];
+var endpoint = "https://www.wikidata.org/w/api.php?format=json&languages=en&type=item&errorformat=none";
+function loadDataFromWikidata(compound, property) {
+    if (compound in wikidataCache) {
+        return wikidataCache[compound][property];
+    }
+
+    var url = endpoint + "&action=websearchentities&search=" + compound;
+    var searchResults = JSON.parse(getDataSync(url));
+    // TODO: handle not found & get more than just first item
+    var item = searchResults["search"][0];
+    var itemUrl = endpoint + "&action=wbgetentities&ids=" + item["id"];
+    var itemInfo = JSON.parse(getDataSync(itemUrl));
+    wikidataCache[compound] = itemInfo["entities"][item["id"]]; // @TODO: extract properties as the current result will not be usable
+    // unnecessary recursion to prevent unnecessary repetition
+    return loadDataFromWikidata(compound, property);
+}
+
+/**
+ * GET data in a non-async way
+ * 
+ * @param {string} url
+ */
+function getDataSync(url) {
+    $.ajax({
+        url: url,
+        async: false
+    }).done(function (data) {
+        return data;
+    });
+}
+
 function endEvent(event) {
     if (event) {
         console.log("event completed");
@@ -92,7 +134,11 @@ function endEvent(event) {
     }
 }
 
-// function to resolve H & P identifier in the selected table to their linguistic counterpart
+/**
+ * function to resolve H & P identifier in the selected table to their linguistic counterpart
+ * 
+ * @param {any} event
+ */
 function resolveHPSentences(event) {
     console.log("ChemWizard starts resolving H & P sentences");
     Word.run(function (context) {
