@@ -10,6 +10,7 @@
     <UseGlobalApplicationHostFile />
     <ProfileToSelectInPublishDialog>ChemWizard - Web Deploy</ProfileToSelectInPublishDialog>
     <NameOfLastUsedPublishProfile>ChemWizard - Web Deploy</NameOfLastUsedPublishProfile>
+    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
