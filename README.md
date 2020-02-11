@@ -26,9 +26,10 @@ ChemWizard is available for Word 2016+, Word 2016 for Mac and Word Online and ca
 
 ## Contributions
 Contributions are very welcome. Feel free to fork, change and send pull requests.
+Or just open an issue if you have questions.
 
-## TODO:
-[ ] be more flexible about table layout
-[ ] load H&P data & safety symbols too from a database (which one?)
-[ ] design a more modern logo
-[ ] localize ([docs](https://dev.office.com/docs/add-ins/develop/localization))
+## TODO
+- [ ] be more flexible about table layout
+- [ ] load H&P data & safety symbols too from a database (which one?)
+- [ ] design a more modern logo
+- [ ] localize ([docs](https://dev.office.com/docs/add-ins/develop/localization))
